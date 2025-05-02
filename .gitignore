@@ -1,0 +1,48 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn.lock
+.pnpm-lock.yaml
+.eslintcache
+
+# Build artifacts
+/dist/
+/.vite/
+
+# Environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.example
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+/logs/
+
+# IDE specific
+/.idea/
+/.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.cache/
+temp/
+tmp/
+out/
+build/
+
+# TypeScript cache
+*.tsbuildinfo

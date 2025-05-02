@@ -1,0 +1,9 @@
+// ==UserScript==
+// @name         Jira Smart Release
+// @namespace    http://swiveltech.atlassian.net/
+// @version      1.1
+// @description  Add a Copy Release button to Jira release pages (styled like Create button)
+// @author       You
+// @match        https://swiveltech.atlassian.net/projects/SW20/versions/*/tab/release-report-all-issues
+// @grant        none
+// ==/UserScript==
