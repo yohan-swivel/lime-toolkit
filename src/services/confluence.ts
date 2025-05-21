@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CONFLUENCE_CONFIG } from "./conflig";
+import { CONFLUENCE_CONFIG } from "../conflig";
 
 const BASE_URL = `https://${CONFLUENCE_CONFIG.DOMAIN}`;
 
@@ -23,14 +23,19 @@ export const getConfluencePage = (pageId: number) =>
     },
   });
 
-export const createDraftedConfluncePage = (draftData: PAGE_META) =>
-  axios.post(`${BASE_URL}/wiki/api/v2/drafts`, draftData, {
-    auth: {
-      username: CONFLUENCE_CONFIG.EMAIL,
-      password: CONFLUENCE_CONFIG.API_TOKEN,
-    },
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-  });
+export const createDraftedConfluncePage = (draftData: PAGE_META) => {
+  const pageData = { ...draftData, status: 'draft' }
+
+  axios.post(`${BASE_URL}/wiki/api/v2/pages`,
+    pageData
+    , {
+      auth: {
+        username: CONFLUENCE_CONFIG.EMAIL,
+        password: CONFLUENCE_CONFIG.API_TOKEN,
+      },
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+}
